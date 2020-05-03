@@ -1,5 +1,5 @@
 variable "name" {
-    default = "demo.terraform.k8s"
+    default = "demo-terraform-k8s"
 }
 variable "location" {
     default = "West Europe"

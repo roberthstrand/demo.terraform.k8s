@@ -1,5 +1,5 @@
 # Kubernetes 
-## Setting up a new cluster through Azure Kubernetes Service
+##Setting up a new cluster through Azure Kubernetes Service
 
 ### Creating the cluster
 resource "azurerm_kubernetes_cluster" "k8s" {
@@ -13,9 +13,9 @@ resource "azurerm_kubernetes_cluster" "k8s" {
         node_count      = 1
         vm_size         = "Standard_F2s_v2" # B2s
     }
-### Define the service principal, created in main.tf
+### Define the service principal
     service_principal {
-        client_id     = azuread_service_principal.k8s.id
+        client_id     = azuread_service_principal.k8s.application_id
         client_secret = random_password.password.result
     }
 ### set the tags
