@@ -1,7 +1,11 @@
 ## Create a Service Principal, and the necessary application
 ## docs: https://www.terraform.io/docs/providers/azuread/r/service_principal.html
+resource "random_integer" "appnumber" {
+    min = 1
+    max = 4
+}
 resource "azuread_application" "kubeapp" {
-    name = "kubeapp"
+    name = "kubeapp${random_integer.appnumber.result}"
 }
 resource "azuread_service_principal" "k8s" {
     application_id = azuread_application.kubeapp.application_id
