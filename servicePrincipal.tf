@@ -17,9 +17,9 @@ resource "random_password" "password" {
     special = true
 }
 resource "azuread_service_principal_password" "k8s" {
-    service_principal_id  = azuread_service_principal.k8s.id
-    value                 = random_password.password.result
-    end_date_relative     = "24h"
+    service_principal_id = azuread_service_principal.k8s.id
+    value                = random_password.password.result
+    end_date_relative    = "24h"
 }
 
 output "display_name" {
