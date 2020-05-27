@@ -1,12 +1,12 @@
 variable "name" {
-    default = "demo-terraform-k8s"
+	default = "demo-terraform-k8s"
 }
 variable "location" {
-    default = "West Europe"
+	default = "West Europe"
 }
 variable tags {
-    default = {
-        environment = "demo"
-        source      = "terraform"
-    }
+	default = {
+		environment = "demo"
+		source      = "terraform"
+	}
 }
